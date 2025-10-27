@@ -65,7 +65,7 @@ export default async function Dashboard() {
           <div>
             <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Dashboard</h1>
             <p className="text-lg text-gray-600 mt-1">
-              Resumen general de tu plataforma Rentalist
+              Resumen general de tu plataforma Easylease
             </p>
           </div>
         </div>

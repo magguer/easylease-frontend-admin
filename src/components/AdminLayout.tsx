@@ -37,7 +37,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
       >
         <div className="flex items-center justify-center h-16 px-4 bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
           <h1 className="text-xl font-bold text-white tracking-tight">
-            🏠 Rentalist Admin
+            🏠 EasyLease Admin
           </h1>
         </div>
 
@@ -73,7 +73,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
             </div>
             <div className="ml-3 flex-1 min-w-0">
               <p className="text-sm font-semibold text-gray-900 truncate">Administrador</p>
-              <p className="text-xs text-gray-600 truncate">admin@rentalist.com</p>
+              <p className="text-xs text-gray-600 truncate">admin@easylease.com</p>
             </div>
           </div>
         </div>
