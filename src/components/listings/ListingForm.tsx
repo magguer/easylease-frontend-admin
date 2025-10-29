@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Listing } from '@/lib/api';
-import { Save, ArrowLeft, Upload, X } from 'lucide-react';
+import { Save, ArrowLeft } from 'lucide-react';
+import { ImageUpload } from './ImageUpload';
 import Link from 'next/link';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
@@ -17,7 +18,6 @@ export function ListingForm({ listing, isEditing = false }: ListingFormProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [images, setImages] = useState<string[]>(listing?.images || []);
-  const [newImageUrl, setNewImageUrl] = useState('');
 
   const [formData, setFormData] = useState({
     title: listing?.title || '',
@@ -54,16 +54,7 @@ export function ListingForm({ listing, isEditing = false }: ListingFormProps) {
     setFormData(prev => ({ ...prev, [field]: items }));
   };
 
-  const addImage = () => {
-    if (newImageUrl.trim() && !images.includes(newImageUrl.trim())) {
-      setImages(prev => [...prev, newImageUrl.trim()]);
-      setNewImageUrl('');
-    }
-  };
 
-  const removeImage = (index: number) => {
-    setImages(prev => prev.filter((_, i) => i !== index));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -305,46 +296,11 @@ export function ListingForm({ listing, isEditing = false }: ListingFormProps) {
           {/* Images */}
           <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Imágenes</h3>
-            
-            <div className="space-y-4">
-              <div className="flex gap-2">
-                <input
-                  type="url"
-                  value={newImageUrl}
-                  onChange={(e) => setNewImageUrl(e.target.value)}
-                  placeholder="URL de la imagen"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
-                />
-                <button
-                  type="button"
-                  onClick={addImage}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  <Upload className="w-4 h-4" />
-                </button>
-              </div>
-
-              {images.length > 0 && (
-                <div className="grid grid-cols-2 gap-4">
-                  {images.map((image, index) => (
-                    <div key={index} className="relative group">
-                      <img
-                        src={image}
-                        alt={`Imagen ${index + 1}`}
-                        className="w-full h-24 object-cover rounded-lg border border-gray-200"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => removeImage(index)}
-                        className="absolute top-1 right-1 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <ImageUpload
+              images={images}
+              onImagesChange={setImages}
+              folder="listings"
+            />
           </div>
 
           {/* Preferences */}
