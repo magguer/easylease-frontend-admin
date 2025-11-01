@@ -50,20 +50,20 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
   }
 
   return (
-    <div className="max-w-4xl">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center space-x-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
+        <div className="flex items-center space-x-3 sm:space-x-4">
           <Link
             href="/leads"
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
             title="Volver a leads"
           >
             <ArrowLeft className="w-5 h-5 text-gray-600" />
           </Link>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Detalles del Lead</h1>
-            <p className="text-gray-600 mt-1">Información completa del contacto</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Detalles del Lead</h1>
+            <p className="text-sm sm:text-base text-gray-600 mt-1">Información completa del contacto</p>
           </div>
         </div>
       </div>
@@ -71,32 +71,32 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
       {/* Main Content */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         {/* Lead Header */}
-        <div className="bg-gradient-to-r from-green-500 to-green-600 px-8 py-6 text-white">
-          <div className="flex items-start justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <User className="w-8 h-8" />
+        <div className="bg-gradient-to-r from-green-500 to-green-600 px-4 sm:px-6 lg:px-8 py-6 text-white">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm flex-shrink-0">
+                <User className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <div>
-                <h2 className="text-2xl font-bold">{lead.name}</h2>
-                <p className="text-green-100 mt-1">{lead.email}</p>
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl sm:text-2xl font-bold truncate">{lead.name}</h2>
+                <p className="text-green-100 mt-1 text-sm sm:text-base truncate">{lead.email}</p>
               </div>
             </div>
-            <span className={`px-4 py-2 rounded-full text-sm font-semibold ${statusColors[lead.status as keyof typeof statusColors]} bg-white`}>
+            <span className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold ${statusColors[lead.status as keyof typeof statusColors]} bg-white self-start sm:self-auto whitespace-nowrap`}>
               {statusLabels[lead.status as keyof typeof statusLabels]}
             </span>
           </div>
         </div>
 
         {/* Lead Details */}
-        <div className="p-8 space-y-6">
+        <div className="p-4 sm:p-6 lg:p-8 space-y-6">
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-              <Phone className="w-5 h-5 mr-2 text-green-600" />
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-600" />
               Información de Contacto
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center text-sm text-gray-500 mb-1">
                   <Mail className="w-4 h-4 mr-2" />
@@ -127,12 +127,12 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
           {/* Message */}
           {lead.message && (
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                <MessageSquare className="w-5 h-5 mr-2 text-green-600" />
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-600" />
                 Mensaje
               </h3>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 whitespace-pre-wrap">{lead.message}</p>
+              <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                <p className="text-sm sm:text-base text-gray-700 whitespace-pre-wrap">{lead.message}</p>
               </div>
             </div>
           )}
@@ -140,26 +140,26 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
           {/* Listing Reference */}
           {lead.listing_id && (
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                <Building className="w-5 h-5 mr-2 text-green-600" />
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-600" />
                 Listing de Interés
               </h3>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-gray-900 font-semibold">
+              <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm sm:text-base text-gray-900 font-semibold truncate">
                       {typeof lead.listing_id === 'object' && lead.listing_id.title 
                         ? lead.listing_id.title 
                         : 'Listing eliminado'}
                     </div>
                     {typeof lead.listing_id === 'object' && lead.listing_id.slug && (
-                      <div className="text-gray-500 text-sm mt-1">{lead.listing_id.slug}</div>
+                      <div className="text-gray-500 text-xs sm:text-sm mt-1 truncate">{lead.listing_id.slug}</div>
                     )}
                   </div>
                   {typeof lead.listing_id === 'object' && lead.listing_id._id && (
                     <Link
                       href={`/listings/${lead.listing_id._id}/view`}
-                      className="text-green-600 hover:text-green-700 text-sm font-medium"
+                      className="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium whitespace-nowrap"
                     >
                       Ver listing →
                     </Link>
@@ -171,11 +171,11 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
 
           {/* Metadata */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-              <FileText className="w-5 h-5 mr-2 text-green-600" />
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-600" />
               Información del Sistema
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center text-sm text-gray-500 mb-1">
                   <Calendar className="w-4 h-4 mr-2" />
@@ -211,17 +211,17 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
         </div>
 
         {/* Actions */}
-        <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 flex justify-between">
+        <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-t border-gray-100 flex flex-col sm:flex-row justify-between gap-3">
           <Link
             href="/leads"
-            className="px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-lg transition-colors"
+            className="px-4 py-2 text-center text-gray-700 hover:bg-gray-200 rounded-lg transition-colors text-sm sm:text-base"
           >
             ← Volver
           </Link>
-          <div className="flex space-x-3">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <a
               href={`mailto:${lead.email}`}
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors inline-flex items-center"
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors inline-flex items-center justify-center text-sm sm:text-base"
             >
               <Mail className="w-4 h-4 mr-2" />
               Enviar Email
@@ -229,7 +229,7 @@ export default async function ViewLeadPage({ params }: ViewLeadPageProps) {
             {lead.phone && (
               <a
                 href={`tel:${lead.phone}`}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center justify-center text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Llamar

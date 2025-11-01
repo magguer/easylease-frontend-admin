@@ -65,12 +65,12 @@ export function PartnerForm({ partner }: PartnerFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
       {/* Header Actions */}
-      <div className="flex items-center justify-between border-b border-gray-200 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 border-b border-gray-200 pb-4 sm:pb-6">
         <Link
           href="/partners"
-          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+          className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Volver a partners
@@ -78,7 +78,7 @@ export function PartnerForm({ partner }: PartnerFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
+          className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
         >
           <Save className="w-5 h-5 mr-2" />
           {isSubmitting ? 'Guardando...' : (isEditing ? 'Actualizar' : 'Crear Partner')}
@@ -86,12 +86,12 @@ export function PartnerForm({ partner }: PartnerFormProps) {
       </div>
 
       {/* Form Content */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Personal Information */}
-        <div className="bg-gray-50 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Información Personal</h3>
+        <div className="bg-gray-50 rounded-xl p-4 sm:p-6">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Información Personal</h3>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                 Nombre completo *
@@ -103,12 +103,12 @@ export function PartnerForm({ partner }: PartnerFormProps) {
                 required
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                 placeholder="Ej: Juan Pérez"
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email *
@@ -120,7 +120,7 @@ export function PartnerForm({ partner }: PartnerFormProps) {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   placeholder="juan@example.com"
                 />
               </div>
@@ -135,7 +135,7 @@ export function PartnerForm({ partner }: PartnerFormProps) {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   placeholder="+34 600 000 000"
                 />
               </div>
@@ -144,10 +144,10 @@ export function PartnerForm({ partner }: PartnerFormProps) {
         </div>
 
         {/* Business Information */}
-        <div className="bg-gray-50 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Información Empresarial</h3>
+        <div className="bg-gray-50 rounded-xl p-4 sm:p-6">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Información Empresarial</h3>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">
                 Nombre de la empresa
@@ -173,7 +173,7 @@ export function PartnerForm({ partner }: PartnerFormProps) {
                 required
                 value={formData.status}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 text-sm sm:text-base"
               >
                 <option value="pending">⏳ Pendiente</option>
                 <option value="active">✅ Activo</option>
@@ -189,16 +189,16 @@ export function PartnerForm({ partner }: PartnerFormProps) {
         </div>
 
         {/* Info Box */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-          <div className="flex">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6">
+          <div className="flex gap-3">
             <div className="flex-shrink-0">
               <svg className="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
             </div>
-            <div className="ml-3">
+            <div className="flex-1 min-w-0">
               <h3 className="text-sm font-medium text-blue-800">Sobre los Partners</h3>
-              <div className="mt-2 text-sm text-blue-700">
+              <div className="mt-2 text-xs sm:text-sm text-blue-700">
                 <p>Los partners son los propietarios o socios que gestionan las propiedades. Pueden tener múltiples listings asociados.</p>
               </div>
             </div>
