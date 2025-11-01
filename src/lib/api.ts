@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8008';
 
 export interface Listing {
   _id: string;
@@ -71,11 +71,13 @@ class ApiClient {
     const url = `${this.baseUrl}${endpoint}`;
     
     const config: RequestInit = {
+      ...options,
+      cache: 'no-store', // Disable Next.js caching
+      next: { revalidate: 0 }, // Force revalidation on every request
       headers: {
         'Content-Type': 'application/json',
         ...options.headers,
       },
-      ...options,
     };
 
     try {
@@ -238,7 +240,7 @@ class ApiClient {
 
   // Health check
   async healthCheck(): Promise<{ok: boolean; status: string; timestamp: string}> {
-    const url = `${this.baseUrl}/health`;
+    const url = `${this.baseUrl}/api/health`;
     const response = await fetch(url);
     return response.json();
   }

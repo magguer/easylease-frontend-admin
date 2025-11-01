@@ -12,7 +12,8 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/a
 async function getListing(id: string) {
   try {
     const response = await fetch(`${API_BASE_URL}/listings/admin/${id}`, {
-      cache: 'no-store'
+      cache: 'no-store',
+      next: { revalidate: 0 }
     });
 
     if (!response.ok) {
