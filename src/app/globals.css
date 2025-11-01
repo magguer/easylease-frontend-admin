@@ -1,8 +1,102 @@
 @import "tailwindcss";
 
+/* ========================================
+   🏠 EASYLEASE BRAND COLORS
+   ========================================
+   
+   Estrategia de color:
+   - Azul primario (#0057D9): Confianza, tecnología, profesionalismo
+   - Naranja (#FF6A00): CTAs, urgencias, dinamismo
+   - Verde (#00C48C): Éxito, disponibilidad, "todo ok"
+   - Neutros: Textos y fondos de soporte
+   - Rojo (#E63946): Solo alertas críticas
+   
+   Cambiar estos valores actualizará toda la aplicación.
+   ======================================== */
+
 :root {
+  /* Base */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2E2E2E;
+  
+  /* ====================================
+     COLOR PRIMARIO - AZUL (#0057D9)
+     Uso: Navegación, botones principales, enlaces, brand identity
+     ==================================== */
+  --primary: #0057D9;
+  --primary-50: #E6F0FF;   /* Fondos muy claros, hover states sutiles */
+  --primary-100: #CCE1FF;  /* Fondos claros, badges */
+  --primary-200: #99C3FF;  /* Borders, disabled states */
+  --primary-300: #66A5FF;  /* Iconos secundarios */
+  --primary-400: #3382E8;  /* Hover de elementos secundarios */
+  --primary-500: #0057D9;  /* COLOR BASE - Botones, links, nav activa */
+  --primary-600: #0048B8;  /* Hover de botones primarios */
+  --primary-700: #003DA1;  /* Active/pressed states */
+  --primary-800: #002F7A;  /* Headers, elementos de alta jerarquía */
+  --primary-900: #001F52;  /* Textos de alto contraste */
+  
+  /* ====================================
+     ACENTO NARANJA (#FF6A00)
+     Uso: CTAs urgentes, notificaciones, "Reserva ahora", editar
+     ==================================== */
+  --orange: #FF6A00;
+  --orange-50: #FFF4E6;    /* Fondos de alerta suave */
+  --orange-100: #FFE9CC;   /* Badges de estado pendiente */
+  --orange-200: #FFD299;   /* Borders de advertencia */
+  --orange-300: #FFBC66;   /* Iconos de atención */
+  --orange-400: #FF9333;   /* Hover de elementos secundarios */
+  --orange-500: #FF6A00;   /* COLOR BASE - CTAs, urgencias */
+  --orange-600: #CC5500;   /* Hover de botones naranja */
+  --orange-700: #994000;   /* Active states */
+  --orange-800: #662B00;   /* Textos sobre fondos claros */
+  --orange-900: #331500;   /* Máximo contraste */
+  
+  /* ====================================
+     ACENTO VERDE (#00C48C)
+     Uso: Éxito, "pagado", "disponible", "todo ok", conversiones
+     ==================================== */
+  --green: #00C48C;
+  --green-50: #E6FBF4;     /* Fondos de éxito */
+  --green-100: #CCF7E9;    /* Badges de disponible/activo */
+  --green-200: #99EFD3;    /* Borders de confirmación */
+  --green-300: #66E7BD;    /* Iconos de check */
+  --green-400: #33D1A3;    /* Hover de elementos positivos */
+  --green-500: #00C48C;    /* COLOR BASE - Success, disponible */
+  --green-600: #009D70;    /* Hover de botones verdes */
+  --green-700: #007654;    /* Active states */
+  --green-800: #004F38;    /* Textos sobre fondos claros */
+  --green-900: #00271C;    /* Máximo contraste */
+  
+  /* ====================================
+     NEUTROS - GRISES
+     Uso: Textos, fondos secundarios, separadores
+     ==================================== */
+  --neutral-50: #FAFBFC;   /* Fondos de página, áreas secundarias */
+  --neutral-100: #F5F7FA;  /* Fondos de cards hover */
+  --neutral-200: #E0E4E9;  /* Borders, separadores */
+  --neutral-300: #C5CBD4;  /* Borders hover */
+  --neutral-400: #A3ADBF;  /* Placeholders, texto deshabilitado */
+  --neutral-500: #7F8B9E;  /* Texto secundario */
+  --neutral-600: #5F6B7D;  /* Texto de menor jerarquía */
+  --neutral-700: #4A5568;  /* Subtítulos, labels */
+  --neutral-800: #2E2E2E;  /* Texto principal, headers */
+  --neutral-900: #1A1A1A;  /* Texto de máximo contraste */
+  
+  /* ====================================
+     ALERTAS CRÍTICAS - ROJO (#E63946)
+     Uso: SOLO para alertas críticas, errores graves, morosidad
+     ==================================== */
+  --red: #E63946;
+  --red-50: #FEE5E7;       /* Fondos de error suave */
+  --red-100: #FCC9CD;      /* Badges de error */
+  --red-200: #F99BA3;      /* Borders de error */
+  --red-300: #F66D79;      /* Iconos de error */
+  --red-400: #ED4654;      /* Hover de alertas */
+  --red-500: #E63946;      /* COLOR BASE - Error, crítico */
+  --red-600: #D62839;      /* Hover de botones de eliminar */
+  --red-700: #C1222D;      /* Active states */
+  --red-800: #9B1B24;      /* Textos de error */
+  --red-900: #7A1519;      /* Máximo contraste de error */
 }
 
 @theme inline {
@@ -10,12 +104,63 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Map CSS variables to Tailwind colors */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  
+  --color-orange-50: var(--orange-50);
+  --color-orange-100: var(--orange-100);
+  --color-orange-200: var(--orange-200);
+  --color-orange-300: var(--orange-300);
+  --color-orange-400: var(--orange-400);
+  --color-orange-500: var(--orange-500);
+  --color-orange-600: var(--orange-600);
+  --color-orange-700: var(--orange-700);
+  --color-orange-800: var(--orange-800);
+  --color-orange-900: var(--orange-900);
+  
+  --color-green-50: var(--green-50);
+  --color-green-100: var(--green-100);
+  --color-green-200: var(--green-200);
+  --color-green-300: var(--green-300);
+  --color-green-400: var(--green-400);
+  --color-green-500: var(--green-500);
+  --color-green-600: var(--green-600);
+  --color-green-700: var(--green-700);
+  --color-green-800: var(--green-800);
+  --color-green-900: var(--green-900);
+  
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  
+  --color-red-500: var(--red-500);
+  --color-red-600: var(--red-600);
+  --color-red-700: var(--red-700);
+  --color-red-800: var(--red-800);
+  --color-red-900: var(--red-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1A1A1A;
+    --foreground: #F5F7FA;
   }
 }
 

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Partner } from '@/lib/api';
 import Link from 'next/link';
-import { Edit, Trash2, Eye, Mail, Phone, Building } from 'lucide-react';
+import { Edit, Trash2, Eye, Mail, Phone, Building, Building2, Plus } from 'lucide-react';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
 
@@ -77,11 +77,11 @@ export function PartnersTable({ partners }: PartnersTableProps) {
       case 'active':
         return 'bg-green-100 text-green-800 border-green-200';
       case 'inactive':
-        return 'bg-red-100 text-red-800 border-red-200';
+        return 'bg-neutral-100 text-neutral-800 border-neutral-200';
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        return 'bg-orange-100 text-orange-800 border-orange-200';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-neutral-100 text-neutral-800 border-neutral-200';
     }
   };
 
@@ -117,12 +117,12 @@ export function PartnersTable({ partners }: PartnersTableProps) {
                 <td className="px-6 py-5 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-12 w-12">
-                      <div className="h-12 w-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center border border-gray-200">
-                        <span className="text-purple-600 text-lg">🤝</span>
+                      <div className="h-12 w-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center border border-neutral-200">
+                        <span className="text-green-600 text-lg">🤝</span>
                       </div>
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-semibold text-gray-900">
+                      <div className="text-sm font-semibold text-neutral-900">
                         {partner.name}
                       </div>
                     </div>
@@ -130,16 +130,16 @@ export function PartnersTable({ partners }: PartnersTableProps) {
                 </td>
                 <td className="px-6 py-5">
                   <div className="space-y-1">
-                    <div className="flex items-center text-sm text-gray-900">
-                      <Mail className="h-4 w-4 mr-2 text-gray-400" />
-                      <a href={`mailto:${partner.email}`} className="hover:text-blue-600">
+                    <div className="flex items-center text-sm text-neutral-900">
+                      <Mail className="h-4 w-4 mr-2 text-neutral-400" />
+                      <a href={`mailto:${partner.email}`} className="hover:text-primary-600">
                         {partner.email}
                       </a>
                     </div>
                     {partner.phone && (
-                      <div className="flex items-center text-sm text-gray-600">
-                        <Phone className="h-4 w-4 mr-2 text-gray-400" />
-                        <a href={`tel:${partner.phone}`} className="hover:text-blue-600">
+                      <div className="flex items-center text-sm text-neutral-600">
+                        <Phone className="h-4 w-4 mr-2 text-neutral-400" />
+                        <a href={`tel:${partner.phone}`} className="hover:text-primary-600">
                           {partner.phone}
                         </a>
                       </div>
@@ -148,12 +148,12 @@ export function PartnersTable({ partners }: PartnersTableProps) {
                 </td>
                 <td className="px-6 py-5">
                   {partner.company_name ? (
-                    <div className="flex items-center text-sm text-gray-900">
-                      <Building className="h-4 w-4 mr-2 text-gray-400" />
+                    <div className="flex items-center text-sm text-neutral-900">
+                      <Building className="h-4 w-4 mr-2 text-neutral-400" />
                       {partner.company_name}
                     </div>
                   ) : (
-                    <span className="text-gray-400 italic text-sm">Sin empresa</span>
+                    <span className="text-neutral-400 italic text-sm">Sin empresa</span>
                   )}
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap">
@@ -167,21 +167,21 @@ export function PartnersTable({ partners }: PartnersTableProps) {
                     <option value="pending">Pendiente</option>
                   </select>
                 </td>
-                <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-600 font-medium">
+                <td className="px-6 py-5 whitespace-nowrap text-sm text-neutral-600 font-medium">
                   {formatDate(partner.createdAt)}
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap text-sm font-medium">
                   <div className="flex items-center space-x-1">
                     <Link
                       href={`/partners/${partner._id}/view`}
-                      className="p-2 text-blue-600 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="p-2 text-primary-600 hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-colors"
                       title="Ver detalles"
                     >
                       <Eye className="h-4 w-4" />
                     </Link>
                     <Link
                       href={`/partners/${partner._id}/edit`}
-                      className="p-2 text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg transition-colors"
+                      className="p-2 text-orange-600 hover:text-orange-900 hover:bg-orange-50 rounded-lg transition-colors"
                       title="Editar"
                     >
                       <Edit className="h-4 w-4" />
@@ -204,18 +204,16 @@ export function PartnersTable({ partners }: PartnersTableProps) {
       
       {partnersData.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-4xl">🤝</span>
+          <div className="w-20 h-20 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Building2 className="w-10 h-10 text-neutral-400" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">No hay partners registrados</h3>
-          <p className="text-gray-600 mb-6">Empieza agregando propietarios y socios a la plataforma</p>
+          <h3 className="text-lg font-semibold text-neutral-900 mb-2">No hay partners registrados</h3>
+          <p className="text-neutral-600 mb-6">Empieza agregando propietarios y socios a la plataforma</p>
           <Link
             href="/partners/create"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+            <Plus className="w-5 h-5 mr-2" />
             Crear primer partner
           </Link>
         </div>

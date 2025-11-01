@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Listing } from '@/lib/api';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Edit, Trash2, Eye } from 'lucide-react';
+import { Edit, Trash2, Eye, Home, Plus } from 'lucide-react';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
 
@@ -124,31 +124,31 @@ export function ListingsTable({ listings }: ListingsTableProps) {
                       alt={listing.title}
                       width={56}
                       height={56}
-                      className="h-14 w-14 rounded-xl object-cover border border-gray-200 shadow-sm"
+                      className="h-14 w-14 rounded-xl object-cover border border-neutral-200 shadow-sm"
                     />
                   ) : (
-                    <div className="h-14 w-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center border border-gray-200">
-                      <span className="text-gray-500 text-lg">🏠</span>
+                    <div className="h-14 w-14 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl flex items-center justify-center border border-neutral-200">
+                      <Home className="w-6 h-6 text-neutral-500" />
                     </div>
                   )}
                 </td>
                 <td className="px-6 py-5">
-                  <div className="text-sm font-semibold text-gray-900 max-w-xs truncate">
+                  <div className="text-sm font-semibold text-neutral-900 max-w-xs truncate">
                     {listing.title}
                   </div>
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-900">{listing.address}</div>
-                  <div className="text-sm text-gray-600">{listing.suburb}</div>
+                  <div className="text-sm font-medium text-neutral-900">{listing.address}</div>
+                  <div className="text-sm text-neutral-600">{listing.suburb}</div>
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap">
-                  <div className="text-sm font-bold text-gray-900">
+                  <div className="text-sm font-bold text-neutral-900">
                     {formatCurrency(listing.price_per_week)}
                   </div>
-                  <div className="text-xs text-gray-500 font-medium">/semana</div>
+                  <div className="text-xs text-neutral-500 font-medium">/semana</div>
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 border border-gray-200">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-neutral-100 text-neutral-800 border border-neutral-200">
                     {listing.room_type}
                   </span>
                 </td>
@@ -167,21 +167,21 @@ export function ListingsTable({ listings }: ListingsTableProps) {
                     {listing.status === 'published' ? 'Publicado' : 'Borrador'}
                   </button>
                 </td>
-                <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-600 font-medium">
+                <td className="px-6 py-5 whitespace-nowrap text-sm text-neutral-600 font-medium">
                   {formatDate(listing.createdAt)}
                 </td>
                 <td className="px-6 py-5 whitespace-nowrap text-sm font-medium">
                   <div className="flex items-center space-x-1">
                     <Link
                       href={`/listings/${listing._id}/view`}
-                      className="p-2 text-blue-600 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="p-2 text-primary-600 hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-colors"
                       title="Ver detalles"
                     >
                       <Eye className="h-4 w-4" />
                     </Link>
                     <Link
                       href={`/listings/${listing._id}/edit`}
-                      className="p-2 text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg transition-colors"
+                      className="p-2 text-orange-600 hover:text-orange-900 hover:bg-orange-50 rounded-lg transition-colors"
                       title="Editar"
                     >
                       <Edit className="h-4 w-4" />
@@ -204,18 +204,16 @@ export function ListingsTable({ listings }: ListingsTableProps) {
       
       {listingsData.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-4xl">🏠</span>
+          <div className="w-20 h-20 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Home className="w-10 h-10 text-neutral-400" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">No hay propiedades registradas</h3>
-          <p className="text-gray-600 mb-6">Comienza creando tu primera propiedad</p>
+          <h3 className="text-lg font-semibold text-neutral-900 mb-2">No hay propiedades registradas</h3>
+          <p className="text-neutral-600 mb-6">Comienza creando tu primera propiedad</p>
           <Link
             href="/listings/create"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+            <Plus className="w-5 h-5 mr-2" />
             Crear primera propiedad
           </Link>
         </div>
