@@ -219,7 +219,7 @@ export function ImageUpload({
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={uploading}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+            className="px-4 py-2 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 cursor-pointer disabled:opacity-50"
           >
             {uploading ? 'Subiendo...' : 'Seleccionar imágenes'}
           </button>

@@ -20,7 +20,7 @@ export default async function PartnersPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-[var(--green-500)] rounded-xl flex items-center justify-center shadow-lg">
             <Building2 className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -32,7 +32,7 @@ export default async function PartnersPage() {
         </div>
         <Link
           href="/partners/create"
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          className="inline-flex items-center px-6 py-3 bg-[var(--green-500)] text-white rounded-xl font-semibold hover:bg-[var(--green-600)] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
         >
           <Plus className="w-5 h-5 mr-2" />
           Nuevo Partner
@@ -54,11 +54,11 @@ export default async function PartnersPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-green-100">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+            <div className="p-3 rounded-lg bg-[var(--green-100)]">
+              <CheckCircle className="w-6 h-6 text-[var(--green-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-green-600">
+              <div className="text-3xl font-bold text-[var(--green-600)]">
                 {partners.filter(p => p.status === 'active').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Activos</div>
@@ -67,11 +67,11 @@ export default async function PartnersPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-orange-100">
-              <Clock className="w-6 h-6 text-orange-600" />
+            <div className="p-3 rounded-lg bg-[var(--green-200)]">
+              <Clock className="w-6 h-6 text-[var(--green-700)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-orange-600">
+              <div className="text-3xl font-bold text-[var(--green-700)]">
                 {partners.filter(p => p.status === 'pending').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Pendientes</div>

@@ -54,15 +54,15 @@ export default async function ViewListingPage({ params }: ViewListingPageProps) 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'published':
-        return 'bg-green-100 text-green-800 border-green-200';
+        return 'bg-[var(--green-100)] text-[var(--green-800)] border-[var(--green-200)]';
       case 'draft':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        return 'bg-[var(--accent-100)] text-[var(--accent-800)] border-[var(--accent-200)]';
       case 'reserved':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-[var(--primary-100)] text-[var(--primary-800)] border-[var(--primary-200)]';
       case 'rented':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
+        return 'bg-[var(--secondary-100)] text-[var(--secondary-800)] border-[var(--secondary-200)]';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-neutral-100 text-neutral-800 border-neutral-200';
     }
   };
 
@@ -86,12 +86,12 @@ export default async function ViewListingPage({ params }: ViewListingPageProps) 
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-[var(--primary-500)] rounded-xl flex items-center justify-center shadow-lg">
             <Eye className="h-6 w-6 text-white" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">{listing.title}</h1>
-            <p className="text-lg text-gray-600 mt-1 flex items-center">
+            <h1 className="text-4xl font-bold text-neutral-900 tracking-tight">{listing.title}</h1>
+            <p className="text-lg text-neutral-600 mt-1 flex items-center">
               <MapPin className="h-5 w-5 mr-2" />
               {listing.address} {listing.suburb && `• ${listing.suburb}`}
             </p>
@@ -100,14 +100,14 @@ export default async function ViewListingPage({ params }: ViewListingPageProps) 
         <div className="flex space-x-3">
           <Link
             href="/listings"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-neutral-700 bg-neutral-100 rounded-lg hover:bg-neutral-200 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Volver a listings
           </Link>
           <Link
             href={`/listings/${listing._id}/edit`}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-[var(--primary-500)] text-white rounded-xl font-semibold hover:bg-[var(--primary-600)] transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <Edit className="w-5 h-5 mr-2" />
             Editar

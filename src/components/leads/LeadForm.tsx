@@ -78,7 +78,7 @@ export function LeadForm({ lead }: LeadFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
+          className="inline-flex items-center justify-center px-6 py-3 bg-[var(--coral)] text-white rounded-xl font-semibold hover:bg-[var(--coral-600)] transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 cursor-pointer"
         >
           <Save className="w-5 h-5 mr-2" />
           {isSubmitting ? 'Guardando...' : (isEditing ? 'Actualizar' : 'Crear Lead')}

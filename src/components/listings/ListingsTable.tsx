@@ -211,7 +211,7 @@ export function ListingsTable({ listings }: ListingsTableProps) {
           <p className="text-neutral-600 mb-6">Comienza creando tu primera propiedad</p>
           <Link
             href="/listings/create"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-[var(--primary-500)] text-white rounded-xl font-semibold hover:bg-[var(--primary-600)] transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <Plus className="w-5 h-5 mr-2" />
             Crear primera propiedad

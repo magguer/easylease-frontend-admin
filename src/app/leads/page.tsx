@@ -20,7 +20,7 @@ export default async function LeadsPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-[var(--coral)] rounded-xl flex items-center justify-center shadow-lg">
             <Users className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -30,13 +30,13 @@ export default async function LeadsPage() {
             </p>
           </div>
         </div>
-        <Link
+        {/* <Link
           href="/leads/create"
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          className="inline-flex items-center px-6 py-3 bg-[var(--coral)] text-white rounded-xl font-semibold hover:bg-[var(--coral-600)] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
         >
           <Plus className="w-5 h-5 mr-2" />
           Nuevo Lead
-        </Link>
+        </Link> */}
       </div>
 
       {/* Stats */}
@@ -54,11 +54,11 @@ export default async function LeadsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-primary-100">
-              <Sparkles className="w-6 h-6 text-primary-600" />
+            <div className="p-3 rounded-lg bg-[var(--primary-100)]">
+              <Sparkles className="w-6 h-6 text-[var(--primary-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-primary-600">
+              <div className="text-3xl font-bold text-[var(--primary-600)]">
                 {leads.filter(l => l.status === 'new').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Nuevos</div>
@@ -67,11 +67,11 @@ export default async function LeadsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-orange-100">
-              <Phone className="w-6 h-6 text-orange-600" />
+            <div className="p-3 rounded-lg bg-[var(--coral-100)]">
+              <Phone className="w-6 h-6 text-[var(--coral-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-orange-600">
+              <div className="text-3xl font-bold text-[var(--coral-600)]">
                 {leads.filter(l => l.status === 'contacted').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Contactados</div>
@@ -80,11 +80,11 @@ export default async function LeadsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-green-100">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+            <div className="p-3 rounded-lg bg-[var(--success-100)]">
+              <CheckCircle className="w-6 h-6 text-[var(--success-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-green-600">
+              <div className="text-3xl font-bold text-[var(--success-600)]">
                 {leads.filter(l => l.status === 'converted').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Convertidos</div>

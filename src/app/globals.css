@@ -4,99 +4,138 @@
    🏠 EASYLEASE BRAND COLORS
    ========================================
    
-   Estrategia de color:
-   - Azul primario (#0057D9): Confianza, tecnología, profesionalismo
-   - Naranja (#FF6A00): CTAs, urgencias, dinamismo
-   - Verde (#00C48C): Éxito, disponibilidad, "todo ok"
-   - Neutros: Textos y fondos de soporte
-   - Rojo (#E63946): Solo alertas críticas
+   Paleta sofisticada y elegante:
+   - Steel Blue (#4D7EA8): Profesional, confiable, sereno
+   - Rose Quartz (#9E90A2): Suave, elegante, moderno
+   - Powder Blue (#B6C2D9): Aire, claridad, espacioso
+   - Raisin Black (#272932): Profundidad, contraste, elegante
+   - Gray (#828489): Equilibrio, neutralidad, profesional
    
    Cambiar estos valores actualizará toda la aplicación.
    ======================================== */
 
 :root {
   /* Base */
-  --background: #ffffff;
-  --foreground: #2E2E2E;
+  --background: #F5F6F8;
+  --foreground: #272932;
   
   /* ====================================
-     COLOR PRIMARIO - AZUL (#0057D9)
+     COLOR PRIMARIO - STEEL BLUE (#4D7EA8)
      Uso: Navegación, botones principales, enlaces, brand identity
      ==================================== */
-  --primary: #0057D9;
-  --primary-50: #E6F0FF;   /* Fondos muy claros, hover states sutiles */
-  --primary-100: #CCE1FF;  /* Fondos claros, badges */
-  --primary-200: #99C3FF;  /* Borders, disabled states */
-  --primary-300: #66A5FF;  /* Iconos secundarios */
-  --primary-400: #3382E8;  /* Hover de elementos secundarios */
-  --primary-500: #0057D9;  /* COLOR BASE - Botones, links, nav activa */
-  --primary-600: #0048B8;  /* Hover de botones primarios */
-  --primary-700: #003DA1;  /* Active/pressed states */
-  --primary-800: #002F7A;  /* Headers, elementos de alta jerarquía */
-  --primary-900: #001F52;  /* Textos de alto contraste */
+  --primary: #4D7EA8;
+  --primary-50: #EEF4F9;   /* Fondos muy claros, hover states sutiles */
+  --primary-100: #DCE9F3;  /* Fondos claros, badges */
+  --primary-200: #B9D3E7;  /* Borders, disabled states */
+  --primary-300: #96BDDB;  /* Iconos secundarios */
+  --primary-400: #739BCF;  /* Hover de elementos secundarios */
+  --primary-500: #4D7EA8;  /* COLOR BASE - Botones, links, nav activa */
+  --primary-600: #3E6586;  /* Hover de botones primarios */
+  --primary-700: #2F4C65;  /* Active/pressed states */
+  --primary-800: #203243;  /* Headers, elementos de alta jerarquía */
+  --primary-900: #101922;  /* Textos de alto contraste */
   
   /* ====================================
-     ACENTO NARANJA (#FF6A00)
-     Uso: CTAs urgentes, notificaciones, "Reserva ahora", editar
+     ACENTO - ROSE QUARTZ (#9E90A2)
+     Uso: Elementos destacados, hover states, acentos suaves
      ==================================== */
-  --orange: #FF6A00;
-  --orange-50: #FFF4E6;    /* Fondos de alerta suave */
-  --orange-100: #FFE9CC;   /* Badges de estado pendiente */
-  --orange-200: #FFD299;   /* Borders de advertencia */
-  --orange-300: #FFBC66;   /* Iconos de atención */
-  --orange-400: #FF9333;   /* Hover de elementos secundarios */
-  --orange-500: #FF6A00;   /* COLOR BASE - CTAs, urgencias */
-  --orange-600: #CC5500;   /* Hover de botones naranja */
-  --orange-700: #994000;   /* Active states */
-  --orange-800: #662B00;   /* Textos sobre fondos claros */
-  --orange-900: #331500;   /* Máximo contraste */
+  --accent: #9E90A2;
+  --accent-50: #F7F5F8;    /* Fondos de acento suave */
+  --accent-100: #EFEBF1;   /* Badges suaves */
+  --accent-200: #DFD7E3;   /* Borders de acento */
+  --accent-300: #CFC3D5;   /* Iconos de acento */
+  --accent-400: #B6A9BB;   /* Hover de elementos secundarios */
+  --accent-500: #9E90A2;   /* COLOR BASE - Acentos elegantes */
+  --accent-600: #7E7382;   /* Hover de botones accent */
+  --accent-700: #5F5661;   /* Active states */
+  --accent-800: #3F3941;   /* Textos sobre fondos claros */
+  --accent-900: #201D20;   /* Máximo contraste */
   
   /* ====================================
-     ACENTO VERDE (#00C48C)
-     Uso: Éxito, "pagado", "disponible", "todo ok", conversiones
+     SECUNDARIO - POWDER BLUE (#B6C2D9)
+     Uso: Backgrounds secundarios, áreas suaves, separadores sutiles
      ==================================== */
-  --green: #00C48C;
-  --green-50: #E6FBF4;     /* Fondos de éxito */
-  --green-100: #CCF7E9;    /* Badges de disponible/activo */
-  --green-200: #99EFD3;    /* Borders de confirmación */
-  --green-300: #66E7BD;    /* Iconos de check */
-  --green-400: #33D1A3;    /* Hover de elementos positivos */
-  --green-500: #00C48C;    /* COLOR BASE - Success, disponible */
-  --green-600: #009D70;    /* Hover de botones verdes */
-  --green-700: #007654;    /* Active states */
-  --green-800: #004F38;    /* Textos sobre fondos claros */
-  --green-900: #00271C;    /* Máximo contraste */
+  --secondary: #B6C2D9;
+  --secondary-50: #F8F9FC;    /* Fondos muy claros */
+  --secondary-100: #F1F3F8;   /* Fondos de cards */
+  --secondary-200: #E3E7F1;   /* Borders sutiles */
+  --secondary-300: #D5DBEA;   /* Separadores */
+  --secondary-400: #C7CFE3;   /* Borders hover */
+  --secondary-500: #B6C2D9;   /* COLOR BASE - Backgrounds secundarios */
+  --secondary-600: #929BAE;   /* Hover */
+  --secondary-700: #6D7482;   /* Active states */
+  --secondary-800: #494D57;   /* Textos */
+  --secondary-900: #24272B;   /* Contraste alto */
   
   /* ====================================
-     NEUTROS - GRISES
+     ÉXITO - Verde suave (derivado de la paleta)
+     ==================================== */
+  --success: #7BA89E;
+  --success-50: #F0F7F5;
+  --success-100: #E1EFEB;
+  --success-200: #C3DFD7;
+  --success-300: #A5CFC3;
+  --success-400: #87BFAF;
+  --success-500: #7BA89E;
+  --success-600: #62877E;
+  --success-700: #4A655F;
+  --success-800: #31443F;
+  --success-900: #192220;
+  
+  /* ====================================
+     CORAL - Para CTAs y acciones importantes
+     Uso: Botones de acción, alertas importantes
+     ==================================== */
+  --coral: #E89E8C;
+  --coral-50: #FDF6F4;
+  --coral-100: #FBEDE9;
+  --coral-200: #F7DBD3;
+  --coral-300: #F3C9BD;
+  --coral-400: #EFB7A7;
+  --coral-500: #E89E8C;
+  --coral-600: #BA7E70;
+  --coral-700: #8B5F54;
+  --coral-800: #5D3F38;
+  --coral-900: #2E201C;
+  
+  /* ====================================
+     NEUTROS - GRISES (basados en Gray #828489)
      Uso: Textos, fondos secundarios, separadores
      ==================================== */
-  --neutral-50: #FAFBFC;   /* Fondos de página, áreas secundarias */
-  --neutral-100: #F5F7FA;  /* Fondos de cards hover */
-  --neutral-200: #E0E4E9;  /* Borders, separadores */
-  --neutral-300: #C5CBD4;  /* Borders hover */
-  --neutral-400: #A3ADBF;  /* Placeholders, texto deshabilitado */
-  --neutral-500: #7F8B9E;  /* Texto secundario */
-  --neutral-600: #5F6B7D;  /* Texto de menor jerarquía */
-  --neutral-700: #4A5568;  /* Subtítulos, labels */
-  --neutral-800: #2E2E2E;  /* Texto principal, headers */
-  --neutral-900: #1A1A1A;  /* Texto de máximo contraste */
+  --neutral-50: #F5F6F8;   /* Fondos de página */
+  --neutral-100: #EEEFF1;  /* Fondos de cards hover */
+  --neutral-200: #D9DADD;  /* Borders, separadores */
+  --neutral-300: #C4C5C9;  /* Borders hover */
+  --neutral-400: #AFB0B5;  /* Placeholders */
+  --neutral-500: #828489;  /* Texto secundario - BASE GRAY */
+  --neutral-600: #68696D;  /* Texto de menor jerarquía */
+  --neutral-700: #4E4F52;  /* Subtítulos, labels */
+  --neutral-800: #272932;  /* Texto principal - RAISIN BLACK */
+  --neutral-900: #1A1B22;  /* Texto de máximo contraste */
   
   /* ====================================
-     ALERTAS CRÍTICAS - ROJO (#E63946)
-     Uso: SOLO para alertas críticas, errores graves, morosidad
+     ALERTAS - ROJO
+     Uso: Errores, alertas críticas
      ==================================== */
-  --red: #E63946;
-  --red-50: #FEE5E7;       /* Fondos de error suave */
-  --red-100: #FCC9CD;      /* Badges de error */
-  --red-200: #F99BA3;      /* Borders de error */
-  --red-300: #F66D79;      /* Iconos de error */
-  --red-400: #ED4654;      /* Hover de alertas */
-  --red-500: #E63946;      /* COLOR BASE - Error, crítico */
-  --red-600: #D62839;      /* Hover de botones de eliminar */
-  --red-700: #C1222D;      /* Active states */
-  --red-800: #9B1B24;      /* Textos de error */
-  --red-900: #7A1519;      /* Máximo contraste de error */
+  --red: #D97373;
+  --red-50: #FCF3F3;
+  --red-100: #F9E7E7;
+  --red-500: #D97373;
+  --red-600: #AE5C5C;
+  --red-700: #824545;
+  
+  /* Alias para compatibilidad */
+  --orange: var(--coral);
+  --orange-50: var(--coral-50);
+  --orange-100: var(--coral-100);
+  --orange-500: var(--coral-500);
+  --orange-600: var(--coral-600);
+  
+  --green: var(--success);
+  --green-50: var(--success-50);
+  --green-100: var(--success-100);
+  --green-500: var(--success);
+  --green-600: var(--success-600);
 }
 
 @theme inline {
@@ -117,16 +156,28 @@
   --color-primary-800: var(--primary-800);
   --color-primary-900: var(--primary-900);
   
-  --color-orange-50: var(--orange-50);
-  --color-orange-100: var(--orange-100);
-  --color-orange-200: var(--orange-200);
-  --color-orange-300: var(--orange-300);
-  --color-orange-400: var(--orange-400);
-  --color-orange-500: var(--orange-500);
-  --color-orange-600: var(--orange-600);
-  --color-orange-700: var(--orange-700);
-  --color-orange-800: var(--orange-800);
-  --color-orange-900: var(--orange-900);
+  --color-coral-50: var(--coral-50);
+  --color-coral-100: var(--coral-100);
+  --color-coral-200: var(--coral-200);
+  --color-coral-300: var(--coral-300);
+  --color-coral-400: var(--coral-400);
+  --color-coral-500: var(--coral-500);
+  --color-coral-600: var(--coral-600);
+  --color-coral-700: var(--coral-700);
+  --color-coral-800: var(--coral-800);
+  --color-coral-900: var(--coral-900);
+  
+  /* Mantener orange como alias de coral para compatibilidad */
+  --color-orange-50: var(--coral-50);
+  --color-orange-100: var(--coral-100);
+  --color-orange-200: var(--coral-200);
+  --color-orange-300: var(--coral-300);
+  --color-orange-400: var(--coral-400);
+  --color-orange-500: var(--coral-500);
+  --color-orange-600: var(--coral-600);
+  --color-orange-700: var(--coral-700);
+  --color-orange-800: var(--coral-800);
+  --color-orange-900: var(--coral-900);
   
   --color-green-50: var(--green-50);
   --color-green-100: var(--green-100);
@@ -157,10 +208,11 @@
   --color-red-900: var(--red-900);
 }
 
+/* Modo oscuro deshabilitado - siempre usamos fondo claro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A1A1A;
-    --foreground: #F5F7FA;
+    --background: #F8F9FA;
+    --foreground: #1E1E1E;
   }
 }
 

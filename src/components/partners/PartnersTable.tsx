@@ -211,7 +211,7 @@ export function PartnersTable({ partners }: PartnersTableProps) {
           <p className="text-neutral-600 mb-6">Empieza agregando propietarios y socios a la plataforma</p>
           <Link
             href="/partners/create"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-[var(--green-500)] text-white rounded-xl font-semibold hover:bg-[var(--green-600)] transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <Plus className="w-5 h-5 mr-2" />
             Crear primer partner

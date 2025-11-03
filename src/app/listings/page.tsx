@@ -54,11 +54,11 @@ export default async function ListingsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-green-100">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+            <div className="p-3 rounded-lg bg-[var(--green-100)]">
+              <CheckCircle className="w-6 h-6 text-[var(--green-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-green-600">
+              <div className="text-3xl font-bold text-[var(--green-600)]">
                 {listings.filter(l => l.status === 'published').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Publicados</div>
@@ -67,11 +67,11 @@ export default async function ListingsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-orange-100">
-              <FileText className="w-6 h-6 text-orange-600" />
+            <div className="p-3 rounded-lg bg-[var(--accent-100)]">
+              <FileText className="w-6 h-6 text-[var(--accent-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-orange-600">
+              <div className="text-3xl font-bold text-[var(--accent-600)]">
                 {listings.filter(l => l.status === 'draft').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Borradores</div>
@@ -80,11 +80,11 @@ export default async function ListingsPage() {
         </div>
         <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
           <div className="flex items-center">
-            <div className="p-3 rounded-lg bg-primary-100">
-              <Lock className="w-6 h-6 text-primary-600" />
+            <div className="p-3 rounded-lg bg-[var(--primary-100)]">
+              <Lock className="w-6 h-6 text-[var(--primary-600)]" />
             </div>
             <div className="ml-4">
-              <div className="text-3xl font-bold text-primary-600">
+              <div className="text-3xl font-bold text-[var(--primary-600)]">
                 {listings.filter(l => l.status === 'reserved').length}
               </div>
               <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">Reservados</div>

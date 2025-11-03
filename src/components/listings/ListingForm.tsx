@@ -112,7 +112,7 @@ export function ListingForm({ listing, isEditing = false }: ListingFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
         >
           <Save className="w-5 h-5 mr-2" />
           {isSubmitting ? 'Guardando...' : (isEditing ? 'Actualizar' : 'Crear Listing')}
