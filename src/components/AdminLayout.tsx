@@ -39,7 +39,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
         <div className="flex items-center justify-center h-16 px-4 bg-gradient-to-r from-primary-600 to-primary-700 shadow-lg">
           <h1 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
             <Home className="w-5 h-5" />
-            EasyLease Admin
+            EasyLease
           </h1>
         </div>
 

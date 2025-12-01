@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EasyLease Admin - Panel de Administración",
+  title: "EasyLease - Panel de Administración",
   description: "Panel de administración para gestionar listings, leads y partners de EasyLease",
   keywords: "admin, panel, easylease, administración",
 };
